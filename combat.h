@@ -8,14 +8,16 @@ using namespace std;
 class monster{
 private:
     string name;
-    int hp,atk,def,sta,spd,lvl=1;
+    int hp,atk,def,sta,spd,lvl=1,exp=0,upoint;
 public:
     void statt();
+    void upgrade();
+    void level();
     void nattack(monster &);
     void sattack(monster &);
     void heal();
     bool alive();
-    monster(string,int = 20,int = 1,int = 1,sta=10,spd=1;
+    monster(string,int = 20,int = 1,int = 1,sta=10,spd=1);
     ~monster();
 };
 srand(time(NULL);)
@@ -38,7 +40,29 @@ void monster::statt(){
     cout<<"Attack: "<<atk<<endl;
     cout<<"Defense: "<<def<<endl;
 }
-
+void monster::level(){
+    int l=lvl,req=250;
+    while(exp>=(req*level))
+    lvl++;
+upoint+=(lvl-l)*3;
+}
+void monster::upgrade(){
+    if(upoint<=0){
+        cout<<"You don't have any upgrade point!!"<<endl;
+    }
+    else {
+        while(upoint>0){
+            cout<<"Upgrade Point: "<<upoint<<endl;
+            cout<<"Stats lists:"<<endl;
+            cout<<"1.HP: "<<hp<<endl;
+            cout<<"2.Stamina: "<<sta<<endl;
+            cout<<"3.Speed: "<<spd<<endl;
+            cout<<"4.Attack: "<<atk<<endl;
+            cout<<"5.Defense: "<<def<<endl;
+            cout<<"Choose stats to upgrade: ";
+        }
+    }
+}
 void monster::nattack(monster &x){
 x.hp-=
 }
