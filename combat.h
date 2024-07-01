@@ -1,10 +1,9 @@
-#ifndef combat.h
-#define combat.h
+
+#define combat_h
 #include <iostream>
 using namespace std;
 #include <time.h>
 #include <stdlib.h>
-
 class monster{
 private:
     string name;
@@ -17,17 +16,17 @@ public:
     void sattack(monster &);
     void heal();
     bool alive();
-    monster(string,int = 20,int = 1,int = 1,sta=10,spd=1);
+    monster(string,int = 20,int = 1,int = 1,int=10,int=1);
     ~monster();
 };
-srand(time(NULL);)
+
 monster::monster (string n, int h, int a, int d,int st, int sp)
 {
     name=n;
     hp=h;
     atk=a;
     def=d;
-    sta=st
+    sta=st;
     spd=sp;
     cout<<name<<" is a monster"<<endl;
 }
@@ -42,7 +41,7 @@ void monster::statt(){
 }
 void monster::level(){
     int l=lvl,req=250;
-    while(exp>=(req*level))
+    while(exp>=(req*lvl))
     lvl++;
 upoint+=(lvl-l)*3;
 }
@@ -64,5 +63,9 @@ void monster::upgrade(){
     }
 }
 void monster::nattack(monster &x){
-x.hp-=
+x.hp-=atk;
+}
+monster::~monster()
+{
+    cout<<name<<" is dead."<<endl;
 }
