@@ -30,3 +30,7 @@ int numin(){
         return atoi(x);
     }
 }
+
+void pagebreak(){
+    cout<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl;
+}
